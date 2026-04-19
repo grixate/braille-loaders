@@ -48,6 +48,8 @@ function buildBaseRenderModel(frame: string, context: EffectContext): RenderMode
       color: "#f8fafc",
       lineHeight: 1,
       whiteSpace: frame.includes("\n") ? "pre" : "pre-wrap",
+      direction: "ltr",
+      unicodeBidi: "isolate",
       fontFamily:
         context.config.renderer === "text" ? "\"IBM Plex Mono\", ui-monospace, monospace" : undefined,
       fontSize: 24

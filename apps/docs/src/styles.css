@@ -20,10 +20,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(251, 113, 133, 0.24), transparent 30%),
-    radial-gradient(circle at 80% 10%, rgba(103, 232, 249, 0.18), transparent 24%),
-    linear-gradient(180deg, #0d0912 0%, #060508 48%, #08070b 100%);
+  background: #08070b;
   color: var(--text);
   font-family: "IBM Plex Sans", sans-serif;
 }
@@ -49,7 +46,7 @@ body::before {
 .hero {
   padding: 28px;
   border: 1px solid var(--line);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  background: rgba(15, 15, 20, 0.92);
   backdrop-filter: blur(18px);
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
 }
@@ -103,11 +100,11 @@ textarea {
 .primary-button {
   border: 0;
   padding: 14px 20px;
-  background: linear-gradient(135deg, var(--amber), var(--rose));
-  color: #170d07;
+  background: #f8fafc;
+  color: #08070b;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 18px 40px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
 }
 
 .secondary-button {
@@ -139,9 +136,7 @@ textarea {
   justify-content: center;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 45%),
-    linear-gradient(180deg, rgba(10, 12, 17, 0.74), rgba(7, 7, 10, 0.92));
+  background: rgba(10, 12, 17, 0.88);
 }
 
 .preview-card > span {
@@ -271,9 +266,7 @@ input[type="range"] {
 
 .mode-chip.is-active {
   border-color: rgba(249, 168, 212, 0.42);
-  background:
-    linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(251, 113, 133, 0.1)),
-    rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text);
 }
 
@@ -298,9 +291,7 @@ input[type="range"] {
   align-content: center;
   padding: 14px 16px;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(135deg, rgba(103, 232, 249, 0.08), transparent 55%),
-    rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .composer-badge strong {
@@ -313,9 +304,7 @@ input[type="range"] {
   gap: 16px;
   padding: 18px;
   border: 1px solid var(--line-strong);
-  background:
-    radial-gradient(circle at top left, rgba(103, 232, 249, 0.08), transparent 28%),
-    rgba(7, 7, 10, 0.34);
+  background: rgba(7, 7, 10, 0.34);
 }
 
 .composer-preview > div {
@@ -337,9 +326,7 @@ input[type="range"] {
   justify-items: start;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 16px;
-  background:
-    radial-gradient(circle at top left, rgba(103, 232, 249, 0.08), transparent 32%),
-    rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.02);
   color: var(--text);
   text-align: left;
   cursor: pointer;
@@ -377,6 +364,11 @@ input[type="range"] {
   color: #fcd34d;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.82rem;
+}
+
+.toggle-note {
+  justify-content: center;
+  color: var(--muted);
 }
 
 .schema-panel pre,

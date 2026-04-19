@@ -60,7 +60,8 @@ function shapeElement(shape: GridShape, x: number, y: number, size: number, acti
   const key = `${shape}-${x}-${y}`;
   const shared = {
     key,
-    opacity
+    opacity,
+    fill: "currentColor"
   };
 
   if (shape === "square") {

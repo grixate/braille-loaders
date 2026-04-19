@@ -175,7 +175,6 @@ export function App() {
   const [loader, setLoader] = useState("braille");
   const [renderer, setRenderer] = useState<"text" | "svg-grid">("svg-grid");
   const [speed, setSpeed] = useState(1);
-  const [gradientEnabled, setGradientEnabled] = useState(true);
   const [glowEnabled, setGlowEnabled] = useState(true);
   const [labelEnabled, setLabelEnabled] = useState(true);
   const [labelText, setLabelText] = useState("Loading...");
@@ -252,17 +251,6 @@ export function App() {
 
   const effects: EffectInstance[] = [];
 
-  if (gradientEnabled) {
-    effects.push({
-      name: "gradient",
-      config: {
-        from: "#fde68a",
-        to: "#fb7185",
-        angle: 38
-      }
-    });
-  }
-
   if (glowEnabled) {
     effects.push({
       name: "glow",
@@ -286,15 +274,6 @@ export function App() {
         fontWeight: 600,
         animateDots: true,
         dotSpeedMs: 450
-      }
-    });
-    effects.push({
-      name: "labelShimmer",
-      config: {
-        color: "rgba(255,255,255,0.9)",
-        speedSeconds: 1.4,
-        direction: "right",
-        rotation: 90
       }
     });
   }
@@ -644,10 +623,6 @@ export function SubmitButton({ pending }: { pending: boolean }) {
 
             <div className="field-row">
               <label className="toggle">
-                <input type="checkbox" checked={gradientEnabled} onChange={(event) => setGradientEnabled(event.target.checked)} />
-                <span>Gradient</span>
-              </label>
-              <label className="toggle">
                 <input type="checkbox" checked={glowEnabled} onChange={(event) => setGlowEnabled(event.target.checked)} />
                 <span>Glow</span>
               </label>
@@ -655,6 +630,9 @@ export function SubmitButton({ pending }: { pending: boolean }) {
                 <input type="checkbox" checked={customSymbols} onChange={(event) => setCustomSymbols(event.target.checked)} />
                 <span>Custom symbols</span>
               </label>
+              <div className="toggle toggle-note">
+                <span>Loaders render in solid white by default</span>
+              </div>
             </div>
 
             <div className="field-row">

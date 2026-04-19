@@ -353,7 +353,7 @@ export const curatedLoaders: LoaderDefinition[] = [
     recommendedRenderer: "text",
     sourceName: "shark"
   }),
-  textLoader("grenade", ["،  ", " ، ", "  ،", " ، ", "،  "], 120, {
+  textLoader("grenade", ["●  ", " ● ", "  ●", " ● ", "●  "], 120, {
     category: "novelty",
     complexity: "low",
     recommendedRenderer: "text",
