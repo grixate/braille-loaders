@@ -359,12 +359,396 @@ export const curatedLoaders: LoaderDefinition[] = [
     recommendedRenderer: "text",
     sourceName: "grenade"
   }),
+  textLoader("blink", ["●", "◉", "○", "◉"], 95, {
+    category: "dots",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "blink"
+  }),
+  textLoader("eyeblink", ["◠ ◠", "◡ ◡", "◠ ◠", "● ●"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "eyeblink"
+  }),
+  textLoader("heartbeat", ["▁▁▁▁▁", "▁▂▁▁▁", "▁▂▃▂▁", "▁▂█▂▁", "▁▂▃▂▁", "▁▂▁▁▁"], 90, {
+    category: "pulse",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "heartbeat"
+  }),
+  textLoader("pulse-spiral", ["◜", "◠", "◝", "◞", "◡", "◟"], 85, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "pulseSpiral"
+  }, ["pulseSpiral"]),
+  textLoader("pulse-x", ["╲", "╳", "╱", "╳"], 80, {
+    category: "pulse",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "pulseX"
+  }, ["pulseX"]),
+  textLoader("x-sync", ["╲ ╱", " ╳ ", "╱ ╲", " ╳ "], 85, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "xSync"
+  }, ["xSync"]),
+  textLoader("x-sequence", ["╲   ", " ╲  ", "  ╳ ", "  ╱ ", " ╱  ", "╱   "], 75, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "xSequence"
+  }, ["xSequence"]),
+  textLoader("x-double", ["╲╱", "╳╳", "╱╲", "╳╳"], 80, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "xDouble"
+  }, ["xDouble"]),
+  textLoader("x-fill", ["□", "▣", "■", "▣"], 95, {
+    category: "pulse",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "xFill"
+  }, ["xFill"]),
+  textLoader("dot-wave", ["●    ", "●●   ", "●●●  ", " ●●● ", "  ●●●", "   ●●", "    ●"], 80, {
+    category: "dots",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "dotWave"
+  }, ["dotWave"]),
+  textLoader("dot-sinewave", ["●     \n      ", " ●    \n      ", "  ●   \n      ", "   ●  \n      ", "    ● \n      ", "     ●\n      ", "      \n     ●", "      \n    ● "], 85, {
+    category: "dots",
+    complexity: "high",
+    recommendedRenderer: "text",
+    sourceName: "dotSinewave"
+  }, ["dotSinewave"]),
+  textLoader("dot-cross", ["●   ●\n  ●  \n●   ●", " ● ● \n  ●  \n ● ● ", "  ●  \n●   ●\n  ●  "], 110, {
+    category: "dots",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "dotCross"
+  }, ["dotCross"]),
+  textLoader("dot-corners", ["●   ●\n     \n●   ●", " ● ● \n     \n ● ● ", "  ●  \n ● ● \n●   ●"], 100, {
+    category: "dots",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "dotCorners"
+  }, ["dotCorners"]),
+  textLoader("dot-arrow", ["●    \n●●   \n●●●  ", " ●   \n ●●  \n ●●● ", "  ●  \n ●●  \n●●●  ", "   ● \n  ●● \n ●●●"], 85, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "dotArrow"
+  }, ["dotArrow"]),
+  textLoader("heartpulse", ["♡   ♡", "♥   ♥", "♡ ♥ ♡", " ♥♥♥ ", "♡ ♥ ♡", "♥   ♥"], 100, {
+    category: "pulse",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "heartpulse"
+  }),
   textLoader("line-spinner", ["-", "\\", "|", "/"], 100, {
     category: "line",
     complexity: "low",
     recommendedRenderer: "text",
     sourceName: "line"
-  }, ["line-text"])
+  }, ["line-text"]),
+  textLoader("line-one", ["-", "–", "—", "–"], 100, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "line-1"
+  }, ["line-1"]),
+  textLoader("line-two", ["⠂", "⠒", "⠤", "⠒"], 90, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "line-2"
+  }, ["line-2"]),
+  textLoader("rolling-line", ["/", "—", "\\", "|"], 90, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "rolling-line"
+  }),
+  textLoader("pipe", ["┤", "┘", "┴", "└", "├", "┌", "┬", "┐"], 80, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "pipe"
+  }),
+  textLoader("simple-dots", [".  ", ".. ", "...", " .."], 120, {
+    category: "dots",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "simple-dots"
+  }),
+  textLoader("scroll-dots", [".  ", " . ", "  .", " . "], 120, {
+    category: "dots",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "scroll-dots"
+  }),
+  textLoader("star-one", ["✶", "✷", "✸", "✹", "✺"], 90, {
+    category: "novelty",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "star-1"
+  }, ["star-1"]),
+  textLoader("star-two", ["+", "×", "+", "·"], 100, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "star-2"
+  }, ["star-2"]),
+  textLoader("flip", ["_", "-", "‾", "-"], 90, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "flip"
+  }),
+  textLoader("hamburger", ["☱", "☲", "☴", "☲"], 95, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "hamburger"
+  }),
+  textLoader("trigram", ["☰", "☱", "☲", "☴", "☷"], 95, {
+    category: "novelty",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "trigram"
+  }),
+  textLoader("grow-vertical", ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "▇", "▆"], 85, {
+    category: "pulse",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "grow-vertical"
+  }),
+  textLoader("grow-horizontal", ["▏", "▎", "▍", "▌", "▋", "▊", "▉", "█", "▉", "▊"], 85, {
+    category: "pulse",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "grow-horizontal"
+  }),
+  textLoader("balloon-one", [".", "o", "O", "o"], 110, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "balloon-1"
+  }, ["balloon-1"]),
+  textLoader("balloon-two", ["·", "•", "●", "•"], 110, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "balloon-2"
+  }, ["balloon-2"]),
+  textLoader("noise", ["░", "▒", "▓", "█", "▓", "▒"], 85, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "noise"
+  }),
+  textLoader("boxbounce-one", ["▖", "▘", "▝", "▗"], 95, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "boxbounce-1"
+  }, ["boxbounce-1"]),
+  textLoader("boxbounce-two", ["▌", "▀", "▐", "▄"], 95, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "boxbounce-2"
+  }, ["boxbounce-2"]),
+  textLoader("quadblock", ["▖", "▘", "▝", "▗", "▚", "▞", "▛", "▜", "▟", "▙"], 85, {
+    category: "novelty",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "quadblock"
+  }),
+  textLoader("triangle", ["◢", "◣", "◤", "◥"], 95, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "triangle"
+  }),
+  textLoader("binary", ["010010", "101001", "010110", "001011"], 105, {
+    category: "novelty",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "binary"
+  }),
+  textLoader("arc", ["◜", "◝", "◞", "◟"], 95, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "arc"
+  }),
+  textLoader("circle", ["◡", "⊙", "◠", "⊙"], 95, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "circle"
+  }),
+  textLoader("square-corners", ["◰", "◳", "◲", "◱"], 95, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "square-corners"
+  }),
+  textLoader("circle-quarters", ["◴", "◷", "◶", "◵"], 95, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "circle-quarters"
+  }),
+  textLoader("circle-half", ["◐", "◓", "◑", "◒"], 95, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "circle-half"
+  }),
+  textLoader("squish", ["╫", "╪", "┿", "╪"], 90, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "squish"
+  }),
+  textLoader("bracket-spin", ["⊏", "⊐", "⊓", "⊔"], 90, {
+    category: "orbit",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "bracket-spin"
+  }),
+  textLoader("cross-toggle", ["×", "+", "×", "+"], 95, {
+    category: "line",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "cross-toggle"
+  }),
+  textLoader("toggle-one", ["⊶", "⊷"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-1"
+  }, ["toggle-1"]),
+  textLoader("toggle-two", ["▫", "▪"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-2"
+  }, ["toggle-2"]),
+  textLoader("toggle-three", ["□", "■"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-3"
+  }, ["toggle-3"]),
+  textLoader("toggle-four", ["■", "□"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-4"
+  }, ["toggle-4"]),
+  textLoader("toggle-five", ["▮", "▯"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-5"
+  }, ["toggle-5"]),
+  textLoader("toggle-six", ["ဝ", "၀"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-6"
+  }, ["toggle-6"]),
+  textLoader("toggle-seven", ["⦾", "⦿"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-7"
+  }, ["toggle-7"]),
+  textLoader("toggle-eight", ["◍", "◎"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-8"
+  }, ["toggle-8"]),
+  textLoader("toggle-nine", ["◉", "○"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-9"
+  }, ["toggle-9"]),
+  textLoader("toggle-ten", ["㊂", "㊀"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-10"
+  }, ["toggle-10"]),
+  textLoader("toggle-eleven", ["⧇", "⧈"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-11"
+  }, ["toggle-11"]),
+  textLoader("toggle-twelve", ["☗", "☖"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-12"
+  }, ["toggle-12"]),
+  textLoader("toggle-thirteen", ["=", "≡"], 120, {
+    category: "novelty",
+    complexity: "low",
+    recommendedRenderer: "text",
+    sourceName: "toggle-13"
+  }, ["toggle-13"]),
+  textLoader("arrow-one", ["←", "↖", "↑", "↗", "→", "↘", "↓", "↙"], 80, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "arrow-1"
+  }, ["arrow-1"]),
+  textLoader("arrow-three", ["▹    ", "▹▹   ", "▹▹▹  ", "▹▹▹▹ ", "▹▹▹▹▹"], 90, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "arrow-3"
+  }, ["arrow-3"]),
+  textLoader("bouncing-bar", ["[=    ]", "[ =   ]", "[  =  ]", "[   = ]", "[    =]"], 90, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "bouncing-bar"
+  }),
+  textLoader("bouncing-ball", ["(●    )", "( ●   )", "(  ●  )", "(   ● )", "(    ●)"], 90, {
+    category: "dots",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "bouncing-ball"
+  }),
+  textLoader("gradient-sweep", ["░░░░░░", "▒░░░░░", "▓▒░░░░", "█▓▒░░░", "░█▓▒░░", "░░█▓▒░", "░░░█▓▒", "░░░░█▓"], 85, {
+    category: "novelty",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "gradient-sweep"
+  }),
+  textLoader("material", ["█▁▁▁▁▁▁▁", "▁█▁▁▁▁▁▁", "▁▁█▁▁▁▁▁", "▁▁▁█▁▁▁▁", "▁▁▁▁█▁▁▁", "▁▁▁▁▁█▁▁", "▁▁▁▁▁▁█▁", "▁▁▁▁▁▁▁█"], 70, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "material"
+  }),
+  textLoader("aesthetics", ["▰▱▱▱▱▱▱", "▰▰▱▱▱▱▱", "▰▰▰▱▱▱▱", "▰▰▰▰▱▱▱", "▰▰▰▰▰▱▱", "▰▰▰▰▰▰▱", "▰▰▰▰▰▰▰", "▱▰▰▰▰▰▰"], 80, {
+    category: "line",
+    complexity: "medium",
+    recommendedRenderer: "text",
+    sourceName: "aesthetics"
+  })
 ];
 
 registerLoaders(curatedLoaders);
