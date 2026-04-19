@@ -226,12 +226,13 @@ export function App() {
     });
   }, [composerFrames, composerId, composerReady, customCategory, customInterval, customKind]);
 
-  useEffect(() => {
+  const customLoaderReady = useMemo(() => {
     if (!customDefinition) {
-      return;
+      return false;
     }
 
     registerLoaders([customDefinition]);
+    return true;
   }, [customDefinition]);
 
   useEffect(() => {
@@ -523,6 +524,50 @@ export function SubmitButton({ pending }: { pending: boolean }) {
         </header>
 
         <main className="content-grid">
+          <section className="panel gallery-panel">
+            <div className="panel-header">
+              <p className="eyebrow">Gallery</p>
+              <h2>Browse the full loader collection</h2>
+            </div>
+            <p className="composer-brief">
+              Start here like a specimen wall: every built-in preset in one place, animated live. Click any tile to load
+              it into the playground and remix it in the composer.
+            </p>
+            <div className="gallery-grid">
+              {curatedLoaders.map((candidate) => {
+                const active = sourceMode === "preset" && loader === candidate.id;
+                return (
+                  <button
+                    key={candidate.id}
+                    type="button"
+                    className={active ? "gallery-card is-active" : "gallery-card"}
+                    onClick={() => {
+                      setLoader(candidate.id);
+                      setSourceMode("preset");
+                      setRenderer(candidate.meta.recommendedRenderer);
+                    }}
+                  >
+                    <span className="mini-label">{candidate.meta.category}</span>
+                    <div className="gallery-preview">
+                      <Loader
+                        loader={candidate.id}
+                        renderer={candidate.meta.recommendedRenderer}
+                        speed={0.95}
+                        rendererOptions={
+                          candidate.meta.recommendedRenderer === "svg-grid"
+                            ? { shape: "circle", cellSize: 11, gap: 2, inactiveOpacity: 0.08 }
+                            : {}
+                        }
+                      />
+                    </div>
+                    <strong>{candidate.id}</strong>
+                    <span className="gallery-meta">{candidate.meta.sourceName ?? candidate.id}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+
           <section className="panel controls-panel">
             <div className="panel-header">
               <p className="eyebrow">Playground</p>
@@ -729,7 +774,7 @@ export function SubmitButton({ pending }: { pending: boolean }) {
               <div>
                 <span className="mini-label">Live preview</span>
                 <Loader
-                  loader={composerReady ? composerId : loader}
+                  loader={composerReady && customLoaderReady ? composerId : loader}
                   renderer={customKind === "text" ? "text" : renderer}
                   speed={speed}
                   duration={{ mode: "loop" }}
@@ -762,13 +807,16 @@ export function SubmitButton({ pending }: { pending: boolean }) {
             </div>
           </section>
 
-          <section className="panel schema-panel">
-            <div className="panel-header">
-              <p className="eyebrow">Config</p>
-              <h2>Stable runtime output</h2>
-            </div>
+          <details className="panel collapsible-panel schema-panel">
+            <summary>
+              <span>
+                <span className="eyebrow">Config</span>
+                <strong>Stable runtime output</strong>
+              </span>
+              <span className="summary-meta">Show JSON</span>
+            </summary>
             <pre>{configJson}</pre>
-          </section>
+          </details>
 
           <section className="panel prose-panel">
             <div className="panel-header">
@@ -823,13 +871,16 @@ registerEffect({
             </p>
           </section>
 
-          <section className="panel prose-panel">
-            <div className="panel-header">
-              <p className="eyebrow">Draft JSON</p>
-              <h2>Portable composer bundle</h2>
-            </div>
+          <details className="panel collapsible-panel prose-panel">
+            <summary>
+              <span>
+                <span className="eyebrow">Draft JSON</span>
+                <strong>Portable composer bundle</strong>
+              </span>
+              <span className="summary-meta">Show JSON</span>
+            </summary>
             <pre>{definitionJson}</pre>
-          </section>
+          </details>
 
           <section className="panel migration-panel">
             <div className="panel-header">

@@ -1,12 +1,17 @@
 import { brailleToGrid, trimGrid } from "../grid";
-import type { GridCell, GridShape, RenderModel, SvgGridRenderOutput, SvgGridRendererConfig } from "../types";
+import type { GridCell, GridShape, LoaderSnapshot, RenderModel, SvgGridRenderOutput, SvgGridRendererConfig } from "../types";
 
-export function renderSvgGrid(model: RenderModel, config?: SvgGridRendererConfig): SvgGridRenderOutput {
+export function renderSvgGrid(
+  snapshot: LoaderSnapshot,
+  model: RenderModel,
+  config?: SvgGridRendererConfig
+): SvgGridRenderOutput {
   const grid = trimGrid(brailleToGrid(model.text));
   const cellSize = config?.cellSize ?? 14;
   const gap = config?.gap ?? 3;
-  const rows = grid.length || 1;
-  const cols = grid[0]?.length || 1;
+  const metrics = snapshot.frames.map((frame) => trimGrid(brailleToGrid(frame)));
+  const rows = Math.max(grid.length || 1, ...metrics.map((candidate) => candidate.length || 1));
+  const cols = Math.max(grid[0]?.length || 1, ...metrics.map((candidate) => candidate[0]?.length || 1));
   const width = cols * cellSize + Math.max(cols - 1, 0) * gap;
   const height = rows * cellSize + Math.max(rows - 1, 0) * gap;
   const cells: GridCell[] = [];

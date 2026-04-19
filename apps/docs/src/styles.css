@@ -184,6 +184,11 @@ textarea {
   backdrop-filter: blur(14px);
 }
 
+.gallery-panel,
+.migration-panel {
+  grid-column: 1 / -1;
+}
+
 .panel-header h2 {
   margin: 0;
   font-family: "Fraunces", serif;
@@ -319,6 +324,55 @@ input[type="range"] {
   justify-items: start;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.gallery-card {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  background:
+    radial-gradient(circle at top left, rgba(103, 232, 249, 0.08), transparent 32%),
+    rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.gallery-card strong {
+  font-size: 0.95rem;
+  text-transform: lowercase;
+}
+
+.gallery-card.is-active {
+  border-color: rgba(249, 168, 212, 0.42);
+  box-shadow: 0 0 0 1px rgba(249, 168, 212, 0.16) inset;
+}
+
+.gallery-preview {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.gallery-meta {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .status-note {
   color: #fcd34d;
   font-family: "IBM Plex Mono", monospace;
@@ -337,8 +391,39 @@ input[type="range"] {
   line-height: 1.65;
 }
 
-.migration-panel {
-  grid-column: 1 / -1;
+.collapsible-panel {
+  padding: 0;
+}
+
+.collapsible-panel summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.collapsible-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible-panel summary strong {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+}
+
+.summary-meta {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.collapsible-panel[open] pre {
+  margin: 0 22px 22px;
 }
 
 .table {

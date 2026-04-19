@@ -7,10 +7,11 @@ export function renderFrame(snapshot: LoaderSnapshot, rendererConfig?: RendererC
 
   if (resolvedRenderer === "svg-grid") {
     return renderSvgGrid(
+      snapshot,
       snapshot.renderModel,
       rendererConfig?.type === "svg-grid" ? rendererConfig : undefined
     );
   }
 
-  return renderText(snapshot.renderModel);
+  return renderText(snapshot, snapshot.renderModel);
 }
