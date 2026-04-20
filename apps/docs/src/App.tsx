@@ -187,7 +187,7 @@ export function App() {
         </nav>
 
         <section className="hero">
-          <h1>Unicode loaders for ShadCN.</h1>
+          <h1>Unicode loaders for shadcn.</h1>
           <p className="sub">
             A tiny TypeScript library of {presetCount} animated loaders. Drops into buttons, cards,
             dialogs, and toasts without a new design system.
@@ -234,7 +234,7 @@ export function App() {
           <header className="section-head">
             <div>
               <h2>Blocks</h2>
-              <p>Real ShadCN patterns with loaders wired in.</p>
+              <p>Real shadcn patterns with loaders wired in.</p>
             </div>
           </header>
 
