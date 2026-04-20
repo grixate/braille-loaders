@@ -372,7 +372,7 @@ const ${composerVariable} = defineLoader({
 registerLoaders([${composerVariable}]);`
     : "// Add at least one frame to generate a loader definition.";
 
-  const shadcnSnippet = `import { Button } from "@/components/ui/button";
+const shadcnSnippet = `import { Button } from "@/components/ui/button";
 import { LoaderInline } from "@braille-loaders/react";
 
 export function SubmitButton({ pending }: { pending: boolean }) {
@@ -398,6 +398,28 @@ export function SubmitButton({ pending }: { pending: boolean }) {
         "Publish"
       )}
     </Button>
+  );
+}`;
+
+  const shadcnOverlaySnippet = `import { Card } from "@/components/ui/card";
+import { LoaderOverlay } from "@braille-loaders/react";
+
+export function SyncCard({ syncing }: { syncing: boolean }) {
+  return (
+    <LoaderOverlay
+      active={syncing}
+      loader="scanline-grid"
+      effects={[{ name: "label", config: { text: "Syncing records", animateDots: true } }]}
+      rendererOptions={{ shape: "square", cellSize: 12, gap: 3 }}
+      containerStyle={{ borderRadius: 24 }}
+    >
+      <Card className="rounded-3xl border-white/10 bg-zinc-950 text-white">
+        <div className="p-6">
+          <p className="text-sm text-zinc-400">Workspace index</p>
+          <h3 className="text-2xl font-semibold">12 jobs ready</h3>
+        </div>
+      </Card>
+    </LoaderOverlay>
   );
 }`;
 
@@ -468,16 +490,16 @@ export function SubmitButton({ pending }: { pending: boolean }) {
             <div className="hero-copy">
               <h1>Braille Loaders</h1>
               <p className="lede">
-                An extensible TypeScript loader system with preset packs, runtime effects, ShadCN-friendly React
-                primitives, and a lightweight composer for building your own motion glyphs without leaving the same
-                schema.
+                An extensible TypeScript loader system with a large preset library and ShadCN-friendly React primitives,
+                built so loaders drop straight into buttons, cards, dialogs, and overlays without introducing a new
+                design system.
               </p>
               <div className="hero-actions">
-                <button className="primary-button" onClick={copyConfig}>
-                  Copy JSON Config
+                <button className="primary-button" onClick={copyDefinitionJson}>
+                  Copy Loader Definition
                 </button>
-                <button className="secondary-button" onClick={copyDefinitionJson}>
-                  Copy Composer JSON
+                <button className="secondary-button" onClick={copyConfig}>
+                  Copy Runtime Config
                 </button>
                 <div className="capsule">
                   <span>{curatedLoaders.length} curated presets</span>
@@ -547,27 +569,42 @@ export function SubmitButton({ pending }: { pending: boolean }) {
             </div>
           </section>
 
+          <section className="panel shadcn-panel">
+            <div className="panel-header">
+              <p className="eyebrow">ShadCN First</p>
+              <h2>Integration patterns for the main positioning</h2>
+            </div>
+            <p className="composer-brief">
+              The main promise here is easy ShadCN integration. These are the patterns users should see before advanced
+              authoring tools: inline button states, overlay busy states, and compact status indicators.
+            </p>
+            <div className="integration-grid">
+              <article className="integration-card">
+                <span className="mini-label">Buttons</span>
+                <strong>Inline pending state</strong>
+                <p>Use `LoaderInline` inside `Button` for async submits, mutations, and optimistic actions.</p>
+              </article>
+              <article className="integration-card">
+                <span className="mini-label">Cards / Dialogs</span>
+                <strong>Overlay busy state</strong>
+                <p>Use `LoaderOverlay` to keep content mounted while showing a polished busy layer above it.</p>
+              </article>
+              <article className="integration-card">
+                <span className="mini-label">Status Rows</span>
+                <strong>Compact activity hints</strong>
+                <p>Use tiny text or SVG presets in toolbars, command menus, inspectors, and toasts.</p>
+              </article>
+            </div>
+            <div className="shadcn-code-grid">
+              <pre>{shadcnSnippet}</pre>
+              <pre>{shadcnOverlaySnippet}</pre>
+            </div>
+          </section>
+
           <section className="panel controls-panel">
             <div className="panel-header">
               <p className="eyebrow">Playground</p>
               <h2>Shape the loader</h2>
-            </div>
-
-            <div className="mode-switch" role="tablist" aria-label="Loader source">
-              <button
-                type="button"
-                className={sourceMode === "preset" ? "mode-chip is-active" : "mode-chip"}
-                onClick={() => setSourceMode("preset")}
-              >
-                Preset source
-              </button>
-              <button
-                type="button"
-                className={sourceMode === "custom" ? "mode-chip is-active" : "mode-chip"}
-                onClick={() => setSourceMode("custom")}
-              >
-                Composer source
-              </button>
             </div>
 
             <label className="field">
@@ -667,11 +704,20 @@ export function SubmitButton({ pending }: { pending: boolean }) {
             </label>
           </section>
 
-          <section className="panel composer-panel">
-            <div className="panel-header">
-              <p className="eyebrow">Composer</p>
-              <h2>Author a custom loader</h2>
-            </div>
+          <details className="panel collapsible-panel advanced-panel">
+            <summary>
+              <span>
+                <span className="eyebrow">Advanced Tools</span>
+                <strong>Composer, exports, and plugin authoring</strong>
+              </span>
+              <span className="summary-meta">Show advanced</span>
+            </summary>
+
+            <section className="composer-panel advanced-section">
+              <div className="panel-header">
+                <p className="eyebrow">Composer</p>
+                <h2>Author a custom loader</h2>
+              </div>
 
             <p className="composer-brief">
               Build a new loader from raw frames, preview it instantly, save drafts in local storage, and round-trip the
@@ -777,13 +823,14 @@ export function SubmitButton({ pending }: { pending: boolean }) {
               />
             </label>
 
-            <div className="action-row">
-              <button className="secondary-button" onClick={importComposerJson}>
-                Import JSON
-              </button>
-              {importMessage ? <span className="status-note">{importMessage}</span> : null}
-            </div>
-          </section>
+              <div className="action-row">
+                <button className="secondary-button" onClick={importComposerJson}>
+                  Import JSON
+                </button>
+                {importMessage ? <span className="status-note">{importMessage}</span> : null}
+              </div>
+            </section>
+          </details>
 
           <details className="panel collapsible-panel schema-panel">
             <summary>
@@ -796,23 +843,29 @@ export function SubmitButton({ pending }: { pending: boolean }) {
             <pre>{configJson}</pre>
           </details>
 
-          <section className="panel prose-panel">
-            <div className="panel-header">
-              <p className="eyebrow">Composer Export</p>
-              <h2>Register the current draft</h2>
-            </div>
+          <details className="panel collapsible-panel prose-panel">
+            <summary>
+              <span>
+                <span className="eyebrow">Composer Export</span>
+                <strong>Register the current draft</strong>
+              </span>
+              <span className="summary-meta">Show code</span>
+            </summary>
             <pre>{composerSnippet}</pre>
             <p>
               The exported definition is frames-based on purpose, which makes it easy to edit, review, import later,
               and keep compatible with a future visual composer.
             </p>
-          </section>
+          </details>
 
-          <section className="panel prose-panel">
-            <div className="panel-header">
-              <p className="eyebrow">Plugin Guide</p>
-              <h2>Effect authoring contract</h2>
-            </div>
+          <details className="panel collapsible-panel prose-panel">
+            <summary>
+              <span>
+                <span className="eyebrow">Plugin Guide</span>
+                <strong>Effect authoring contract</strong>
+              </span>
+              <span className="summary-meta">Show guide</span>
+            </summary>
             <pre>{`import { registerEffect } from "@braille-loaders/core";
 
 registerEffect({
@@ -835,19 +888,7 @@ registerEffect({
               Effects are ordered, deterministic, and work across renderers. The composer already emits the same loader
               definition shape and JSON config you would ship in an app or package.
             </p>
-          </section>
-
-          <section className="panel prose-panel">
-            <div className="panel-header">
-              <p className="eyebrow">ShadCN</p>
-              <h2>Drop into UI primitives</h2>
-            </div>
-            <pre>{shadcnSnippet}</pre>
-            <p>
-              A runnable integration demo now lives in `apps/shadcn-demo`, showing button, card, and overlay patterns
-              that mirror the kinds of surfaces we usually build with ShadCN.
-            </p>
-          </section>
+          </details>
 
           <details className="panel collapsible-panel prose-panel">
             <summary>
