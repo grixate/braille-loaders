@@ -12,7 +12,6 @@ Framework-agnostic core, React bindings, curated presets, and a live composer.
 ```
 
 [![npm](https://img.shields.io/npm/v/@dot-loaders/core?style=flat-square&color=000)](https://www.npmjs.com/package/@dot-loaders/core)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@dot-loaders/core?style=flat-square&color=000&label=size)](https://bundlephobia.com/package/@dot-loaders/core)
 [![license](https://img.shields.io/github/license/grixate/dot-loaders?style=flat-square&color=000)](./LICENSE)
 [![CI](https://img.shields.io/github/actions/workflow/status/grixate/dot-loaders/ci.yml?style=flat-square&color=000&label=build)](https://github.com/grixate/dot-loaders/actions)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-000?style=flat-square)](https://www.typescriptlang.org/)
