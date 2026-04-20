@@ -1,6 +1,6 @@
-import "@braille-loaders/presets";
+import "@dot-loaders/presets";
 
-import { createEngine, LOADER_SCHEMA_VERSION, type LoaderConfigV1, type LoaderSnapshot } from "@braille-loaders/core";
+import { createEngine, LOADER_SCHEMA_VERSION, type LoaderConfigV1, type LoaderSnapshot } from "@dot-loaders/core";
 import { useEffect, useRef, useState } from "react";
 import { useLoaderDefaults } from "./context";
 

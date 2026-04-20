@@ -1,6 +1,6 @@
-import "@braille-loaders/presets";
+import "@dot-loaders/presets";
 
-import { createEngine, renderFrame, resolveLoader } from "@braille-loaders/core";
+import { createEngine, renderFrame, resolveLoader } from "@dot-loaders/core";
 import { describe, expect, it } from "vitest";
 
 describe("core engine", () => {

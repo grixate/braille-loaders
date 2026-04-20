@@ -3,7 +3,7 @@ import {
   type GridShape,
   type LabelPosition,
   type SvgGridRenderOutput
-} from "@braille-loaders/core";
+} from "@dot-loaders/core";
 import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 import { createElement, useEffect } from "react";
 import { LoaderDefaultsContext, type LoaderProviderDefaults } from "./context";
@@ -26,15 +26,15 @@ function ensureGlobalLoaderStyles() {
     return;
   }
 
-  const existing = document.getElementById("braille-loaders-styles");
+  const existing = document.getElementById("dot-loaders-styles");
   if (existing) {
     return;
   }
 
   const style = document.createElement("style");
-  style.id = "braille-loaders-styles";
+  style.id = "dot-loaders-styles";
   style.textContent = `
-    @keyframes braille-loaders-shimmer {
+    @keyframes dot-loaders-shimmer {
       from { background-position: 200% 0; }
       to { background-position: -200% 0; }
     }

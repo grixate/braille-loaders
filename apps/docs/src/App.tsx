@@ -1,6 +1,6 @@
-import { curatedLoaders } from "@braille-loaders/presets";
-import { createEngine, brailleToGrid } from "@braille-loaders/core";
-import { Loader, LoaderProvider } from "@braille-loaders/react";
+import { curatedLoaders } from "@dot-loaders/presets";
+import { createEngine, brailleToGrid } from "@dot-loaders/core";
+import { Loader, LoaderProvider } from "@dot-loaders/react";
 import { useEffect, useMemo, useState } from "react";
 
 function useFaviconLoader(loaderId: string) {
@@ -97,14 +97,14 @@ function BrailleMark({ size = 14 }: { size?: number }) {
   );
 }
 
-const installSnippet = `npm install @braille-loaders/react`;
+const installSnippet = `npm install @dot-loaders/react`;
 
-const usageSnippet = `import { Loader } from "@braille-loaders/react";
+const usageSnippet = `import { Loader } from "@dot-loaders/react";
 
 <Loader loader="braille" renderer="text" />`;
 
 const shadcnSnippet = `import { Button } from "@/components/ui/button";
-import { Loader } from "@braille-loaders/react";
+import { Loader } from "@dot-loaders/react";
 
 export function SubmitButton({ pending }: { pending: boolean }) {
   return (
@@ -180,13 +180,13 @@ export function App() {
         <nav className="nav">
           <span className="brand">
             <BrailleMark size={10} />
-            <span>braille-loaders</span>
+            <span>dot-loaders</span>
           </span>
           <div className="nav-links">
             <a href="#gallery">Gallery</a>
             <a href="#blocks">Blocks</a>
             <a href="#install">Install</a>
-            <a href="https://github.com" className="nav-ghost">GitHub</a>
+            <a href="https://github.com/grixate/dot-loaders" className="nav-ghost">GitHub</a>
           </div>
         </nav>
 
@@ -198,7 +198,7 @@ export function App() {
           </p>
           <div className="hero-actions">
             <code className="cli">
-              <span>$ npm i @braille-loaders/react</span>
+              <span>$ npm i @dot-loaders/react</span>
               <CopyButton value={installSnippet} />
             </code>
             <a className="btn-ghost" href="#blocks">View examples →</a>

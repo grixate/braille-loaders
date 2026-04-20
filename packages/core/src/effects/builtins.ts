@@ -178,7 +178,7 @@ export const labelShimmerEffect: EffectPlugin<"labelShimmer", LabelShimmerEffect
           WebkitBackgroundClip: "text",
           backgroundClip: "text",
           color: "transparent",
-          animation: `braille-loaders-shimmer ${config.speedSeconds ?? 1.8}s linear ${(config.delayMs ?? 0) / 1000}s infinite ${direction}`
+          animation: `dot-loaders-shimmer ${config.speedSeconds ?? 1.8}s linear ${(config.delayMs ?? 0) / 1000}s infinite ${direction}`
         }
       }
     };

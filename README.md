@@ -6,9 +6,9 @@ includes a lightweight composer for editing and creating new loaders.
 
 ## Packages
 
-- `@braille-loaders/core`: engine, schema, registry utilities, renderers, and effect plugins
-- `@braille-loaders/presets`: curated built-in loader definitions and compatibility aliases
-- `@braille-loaders/react`: hooks and components for React apps and design-system integration
+- `@dot-loaders/core`: engine, schema, registry utilities, renderers, and effect plugins
+- `@dot-loaders/presets`: curated built-in loader definitions and compatibility aliases
+- `@dot-loaders/react`: hooks and components for React apps and design-system integration
 - `docs`: playground, composer, migration notes, and plugin authoring examples
 - `shadcn-demo`: runnable integration demo for button, card, and overlay patterns
 
@@ -24,7 +24,7 @@ includes a lightweight composer for editing and creating new loaders.
 
 ```tsx
 import { Button } from "@/components/ui/button";
-import { LoaderInline } from "@braille-loaders/react";
+import { LoaderInline } from "@dot-loaders/react";
 
 export function SubmitButton({ pending }: { pending: boolean }) {
   return (

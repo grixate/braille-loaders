@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { LoaderConfigV1 } from "@braille-loaders/core";
+import type { LoaderConfigV1 } from "@dot-loaders/core";
 
 export interface LoaderProviderDefaults extends Partial<Omit<LoaderConfigV1, "schemaVersion" | "loader">> {}
 

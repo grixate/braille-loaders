@@ -10,9 +10,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@braille-loaders/core": "workspace:*",
-    "@braille-loaders/presets": "workspace:*",
-    "@braille-loaders/react": "workspace:*",
+    "@dot-loaders/core": "workspace:*",
+    "@dot-loaders/presets": "workspace:*",
+    "@dot-loaders/react": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

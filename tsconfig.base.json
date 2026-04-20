@@ -16,9 +16,9 @@
     "types": ["vitest/globals"],
     "baseUrl": ".",
     "paths": {
-      "@braille-loaders/core": ["packages/core/src/index.ts"],
-      "@braille-loaders/presets": ["packages/presets/src/index.ts"],
-      "@braille-loaders/react": ["packages/react/src/index.ts"]
+      "@dot-loaders/core": ["packages/core/src/index.ts"],
+      "@dot-loaders/presets": ["packages/presets/src/index.ts"],
+      "@dot-loaders/react": ["packages/react/src/index.ts"]
     }
   }
 }

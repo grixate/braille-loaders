@@ -1,4 +1,4 @@
-import { ensureLoaderConfig, validateLoaderConfig } from "@braille-loaders/core";
+import { ensureLoaderConfig, validateLoaderConfig } from "@dot-loaders/core";
 import { describe, expect, it } from "vitest";
 
 describe("loader schema", () => {

@@ -1,4 +1,4 @@
-import { Loader, LoaderInline, LoaderOverlay, useLoaderFrames } from "@braille-loaders/react";
+import { Loader, LoaderInline, LoaderOverlay, useLoaderFrames } from "@dot-loaders/react";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 

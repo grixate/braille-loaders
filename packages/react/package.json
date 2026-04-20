@@ -1,6 +1,16 @@
 {
-  "name": "@braille-loaders/react",
-  "version": "0.0.0",
+  "name": "@dot-loaders/react",
+  "version": "0.1.0",
+  "description": "React hooks and components for dot-loaders — tiny unicode braille-dot loading indicators for ShadCN and friends.",
+  "keywords": ["loader", "spinner", "braille", "unicode", "react", "shadcn"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grixate/dot-loaders.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://grixate.github.io/dot-loaders/",
+  "bugs": "https://github.com/grixate/dot-loaders/issues",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,13 +23,16 @@
     }
   },
   "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@braille-loaders/core": "workspace:*",
-    "@braille-loaders/presets": "workspace:*"
+    "@dot-loaders/core": "workspace:*",
+    "@dot-loaders/presets": "workspace:*"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs && tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationMap false --outDir dist",

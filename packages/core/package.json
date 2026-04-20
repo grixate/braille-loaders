@@ -1,6 +1,16 @@
 {
-  "name": "@braille-loaders/core",
-  "version": "0.0.0",
+  "name": "@dot-loaders/core",
+  "version": "0.1.0",
+  "description": "Engine, schema, registry, and renderers for dot-loaders — unicode braille-dot loading indicators.",
+  "keywords": ["loader", "spinner", "braille", "unicode", "terminal", "cli"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grixate/dot-loaders.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://grixate.github.io/dot-loaders/",
+  "bugs": "https://github.com/grixate/dot-loaders/issues",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -14,6 +24,9 @@
     "./loader.schema.json": "./dist/loader.schema.json"
   },
   "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs && tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationMap false --outDir dist && cp src/schema/loader.schema.json dist/loader.schema.json",
     "lint": "tsc -p tsconfig.json --noEmit",

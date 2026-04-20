@@ -1,6 +1,16 @@
 {
-  "name": "@braille-loaders/presets",
-  "version": "0.0.0",
+  "name": "@dot-loaders/presets",
+  "version": "0.1.0",
+  "description": "Curated preset library of braille-dot loading animations for @dot-loaders/core.",
+  "keywords": ["loader", "spinner", "braille", "unicode", "presets"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grixate/dot-loaders.git",
+    "directory": "packages/presets"
+  },
+  "homepage": "https://grixate.github.io/dot-loaders/",
+  "bugs": "https://github.com/grixate/dot-loaders/issues",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,8 +23,11 @@
     }
   },
   "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@braille-loaders/core": "workspace:*"
+    "@dot-loaders/core": "workspace:*"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs && tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationMap false --outDir dist",

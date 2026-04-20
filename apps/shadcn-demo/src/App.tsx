@@ -1,4 +1,4 @@
-import { Loader, LoaderInline, LoaderOverlay, LoaderProvider } from "@braille-loaders/react";
+import { Loader, LoaderInline, LoaderOverlay, LoaderProvider } from "@dot-loaders/react";
 import { useMemo, useState } from "react";
 
 function Button({

@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@braille-loaders/core": fileURLToPath(new URL("./packages/core/src/index.ts", import.meta.url)),
-      "@braille-loaders/presets": fileURLToPath(new URL("./packages/presets/src/index.ts", import.meta.url)),
-      "@braille-loaders/react": fileURLToPath(new URL("./packages/react/src/index.ts", import.meta.url))
+      "@dot-loaders/core": fileURLToPath(new URL("./packages/core/src/index.ts", import.meta.url)),
+      "@dot-loaders/presets": fileURLToPath(new URL("./packages/presets/src/index.ts", import.meta.url)),
+      "@dot-loaders/react": fileURLToPath(new URL("./packages/react/src/index.ts", import.meta.url))
     }
   },
   test: {

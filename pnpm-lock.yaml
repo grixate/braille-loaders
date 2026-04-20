@@ -65,13 +65,13 @@ importers:
 
   apps/docs:
     dependencies:
-      '@braille-loaders/core':
+      '@dot-loaders/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@braille-loaders/presets':
+      '@dot-loaders/presets':
         specifier: workspace:*
         version: link:../../packages/presets
-      '@braille-loaders/react':
+      '@dot-loaders/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -83,10 +83,10 @@ importers:
 
   apps/shadcn-demo:
     dependencies:
-      '@braille-loaders/core':
+      '@dot-loaders/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@braille-loaders/react':
+      '@dot-loaders/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -100,16 +100,16 @@ importers:
 
   packages/presets:
     dependencies:
-      '@braille-loaders/core':
+      '@dot-loaders/core':
         specifier: workspace:*
         version: link:../core
 
   packages/react:
     dependencies:
-      '@braille-loaders/core':
+      '@dot-loaders/core':
         specifier: workspace:*
         version: link:../core
-      '@braille-loaders/presets':
+      '@dot-loaders/presets':
         specifier: workspace:*
         version: link:../presets
       react:

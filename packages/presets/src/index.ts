@@ -3,7 +3,7 @@ import {
   registerLoaders,
   type FrameGeneratorContext,
   type LoaderDefinition
-} from "@braille-loaders/core";
+} from "@dot-loaders/core";
 
 function brailleLoader(
   id: string,
